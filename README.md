@@ -29,7 +29,7 @@ A LVGL port for Cortex-M55 running on an [Arm official FPGA prototype developmen
 
 ## LVGL Porting Exercise 
 
-For people to learn and practice how to port LVGL to a LCD-Ready MDK project using LVGL cmsis-pack in MDK environment, a dedicated branch called "***lvgl_porting_exercise***" has been introduced. It contains a clean project which provides:
+For people to learn and practice how to port LVGL to a LCD-Ready MDK project using LVGL cmsis-pack, a dedicated branch called "***lvgl_porting_exercise***" has been introduced. It contains a clean project which provides:
 
 - An LCD ready project with low-level LCD APIs
 
