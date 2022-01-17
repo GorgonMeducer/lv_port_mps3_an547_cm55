@@ -31,7 +31,7 @@ A LVGL porting for Cortex-M55 running on an [Arm official FPGA prototyping devel
 
 For people to learn and practice how to port LVGL to a LCD-Ready MDK project using LVGL cmsis-pack, a dedicated branch called "***lvgl_porting_exercise***" has been introduced. It contains a clean project which provides:
 
-- An LCD ready project with low-level LCD APIs
+- Low-level LCD APIs
 
 ```c
 extern int32_t  GLCD_Initialize          (void);
@@ -53,24 +53,6 @@ extern int32_t  GLCD_DrawBitmap          (uint32_t x, uint32_t y,
 
 
 - A simple ***main()*** function
-
-```c
-int main(void)
-{
-    printf("Hello LVGL!!\r\n");
-    
-    __cycleof__("Draw strings on LCD") {
-        __LL_LCD_PRINT_BANNER("Hello LVGL!!");
-    }
-    
-    while(1) {
-    
-    }
-    
-}
-```
-
-
 
 - A simple way to display string on LCD
 
