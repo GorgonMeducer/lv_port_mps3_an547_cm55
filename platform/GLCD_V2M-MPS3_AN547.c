@@ -776,34 +776,29 @@ arm_fsm_rt_t GLCD_Draw_Tile(const arm_2d_tile_t *ptTile,
    - \b  0: function succeeded
    - \b -1: function failed
 */
-int32_t GLCD_DrawBitmap (uint32_t x, uint32_t y, uint32_t width, uint32_t height, const uint8_t *bitmap) {
-  const uint16_t * __RESTRICT ptr_bmp;
+int32_t GLCD_DrawBitmap (uint32_t x, uint32_t y, uint32_t width, uint32_t height, const uint8_t *bitmap) 
+{
+    const uint16_t * __RESTRICT ptr_bmp;
 
-  ptr_bmp = (const uint16_t *)((const void *)bitmap);
+    ptr_bmp = (const uint16_t *)((const void *)bitmap);
 
-#if (GLCD_SWAP_XY == 0)
-  y = (y + Scroll) % GLCD_HEIGHT;
-#endif
+    #if (GLCD_SWAP_XY == 0)
+    y = (y + Scroll) % GLCD_HEIGHT;
+    #endif
 
-  GLCD_SetWindow(x, y, width, height);
+    GLCD_SetWindow(x, y, width, height);
 
-  wr_cmd(0x22);
-  wr_dat_start();
-#if 0
-  for (int32_t i = (int32_t)((height-1)*width); i > -1; i -= width) {
-    for (int32_t j = 0; j < (int32_t)width; j++) {
-      wr_dat_only(ptr_bmp[i+j]);
-    }
-  }
-#else
+    wr_cmd(0x22);
+    wr_dat_start();
+
     uint32_t i = width * height;
     do {
         wr_dat_only(*ptr_bmp++);
     } while(--i);
-#endif
-  wr_dat_stop();
 
-  return 0;
+    wr_dat_stop();
+
+    return 0;
 }
 
 
