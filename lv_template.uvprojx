@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\platform</IncludePath>
+              <IncludePath>.\platform;.</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -413,6 +413,21 @@
               <FileType>5</FileType>
               <FilePath>.\platform\platform.h</FilePath>
             </File>
+            <File>
+              <FileName>GLCD_V2M-MPS3_AN547.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\platform\GLCD_V2M-MPS3_AN547.c</FilePath>
+            </File>
+            <File>
+              <FileName>GLCD_Config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\platform\GLCD_Config.h</FilePath>
+            </File>
+            <File>
+              <FileName>GLCD_Fonts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\platform\GLCD_Fonts.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -432,6 +447,11 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_cfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\app_cfg.h</FilePath>
             </File>
           </Files>
         </Group>

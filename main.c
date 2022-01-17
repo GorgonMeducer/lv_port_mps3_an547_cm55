@@ -36,6 +36,7 @@
 
 int main(void)
 {
+    __LL_LCD_PRINT_BANNER("Hello LVGL!!");
     
     printf("Hello LVGL!!\r\n");
     

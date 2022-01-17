@@ -15,41 +15,22 @@
 *                                                                           *
 ****************************************************************************/
 
-/*============================ INCLUDES ======================================*/
-#include "perf_counter.h"
 
-#include "led_port.h"
-#include "serial.h"
-#include "Board_GLCD.h"
-#include "GLCD_Config.h"
+#ifndef __TOP_APP_CFG_H__
+#define __TOP_APP_CFG_H__
+
+/*============================ INCLUDES ======================================*/
+#include <assert.h>
 
 /*============================ MACROS ========================================*/
-#ifndef UNUSED_PARAM
-#   define UNUSED_PARAM(__VAR)      do {__VAR = __VAR; } while(0)
-#endif
-
 /*============================ MACROFIED FUNCTIONS ===========================*/
 
-#define __LL_LCD_PRINT_BANNER(__STR)                                            \
-        do {                                                                    \
-            GLCD_DrawString(    (GLCD_HEIGHT) / 2 - 8,                          \
-                                (GLCD_WIDTH - sizeof(__STR) * 6) / 2,           \
-                                __STR);                                         \
-        } while(0)
+#define ASSERT(...)         assert(__VA_ARGS__)
+
 
 /*============================ TYPES =========================================*/
 /*============================ GLOBAL VARIABLES ==============================*/
-
-extern GLCD_FONT GLCD_Font_6x8;
-extern GLCD_FONT GLCD_Font_16x24;
-
-/*============================ LOCAL VARIABLES ===============================*/
 /*============================ PROTOTYPES ====================================*/
 
 
-
-
-
-
-
-
+#endif

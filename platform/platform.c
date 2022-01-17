@@ -1,5 +1,5 @@
 /****************************************************************************
-*  Copyright 2021 Gorgon Meducer (Email:embedded_zhuoran@hotmail.com)       *
+*  Copyright 2022 Gorgon Meducer (Email:embedded_zhuoran@hotmail.com)       *
 *                                                                           *
 *  Licensed under the Apache License, Version 2.0 (the "License");          *
 *  you may not use this file except in compliance with the License.         *
@@ -16,6 +16,8 @@
 ****************************************************************************/
 
 /*============================ INCLUDES ======================================*/
+
+#include "app_cfg.h"
 #include "platform.h"
 #include "cmsis_compiler.h"
 
@@ -66,6 +68,15 @@ void app_platform_init(void)
     init_cycle_counter(device_specific_init());
     
     serial_init();
+    
+    GLCD_Initialize();                          /* Initialize the GLCD            */
+
+    /* display initial screen */
+    GLCD_SetFont(&GLCD_Font_6x8);
+    GLCD_SetBackgroundColor(GLCD_COLOR_BLACK);
+    GLCD_ClearScreen();
+    //GLCD_SetBackgroundColor(GLCD_COLOR_BLUE);
+    GLCD_SetForegroundColor(GLCD_COLOR_GREEN);
 }
 
 /*
