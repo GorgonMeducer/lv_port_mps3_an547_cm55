@@ -16,6 +16,7 @@
 ****************************************************************************/
 
 /*============================ INCLUDES ======================================*/
+#include "app_cfg.h"
 #include "platform.h"
 
 #include <stdio.h>
@@ -36,9 +37,13 @@
 
 int main(void)
 {
-    __LL_LCD_PRINT_BANNER("Hello LVGL!!");
+    
     
     printf("Hello LVGL!!\r\n");
+    
+    __cycleof__("Draw strings on LCD") {
+        __LL_LCD_PRINT_BANNER("Hello LVGL!!");
+    }
     
     while(1) {
     
