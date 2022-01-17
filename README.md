@@ -1,5 +1,5 @@
 # lv_port_mps3_an547_cm55
-A LVGL port for Cortex-M55 running on an [Arm official FPGA prototype development board](https://developer.arm.com/tools-and-software/development-boards/fpga-prototyping-boards/mps3) called MPS3 ([AN547](https://developer.arm.com/tools-and-software/development-boards/fpga-prototyping-boards/download-fpga-images#)), see **Figure 1**. It is also possible to run the project template on a free emulator called **Fixed-Virtual-Platforms**, [Corstone-300-FVP](https://developer.arm.com/tools-and-software/open-source-software/arm-platforms-software/arm-ecosystem-fvps).
+A LVGL porting for Cortex-M55 running on an [Arm official FPGA prototyping development board](https://developer.arm.com/tools-and-software/development-boards/fpga-prototyping-boards/mps3) called MPS3 ([AN547](https://developer.arm.com/tools-and-software/development-boards/fpga-prototyping-boards/download-fpga-images#)), see **Figure 1**. It is also possible to run the project template on an emulator called [Corstone-300-FVP](https://developer.arm.com/tools-and-software/open-source-software/arm-platforms-software/arm-ecosystem-fvps), which is free.
 
 
 
@@ -106,7 +106,7 @@ int32_t  GLCD_DrawBitmap (uint32_t x, uint32_t y,
 
 ![image-20220117225044592](./documents/pictures/fvp_clean) 
 
-- An new method, ***\_\_cycleof\_\_()***, for measuring cpu cycles consumed by specified code segment.
+- A new method, ***\_\_cycleof\_\_()***, for measuring cpu cycles consumed by specified code segment.
 
 ```c
     __cycleof__("Draw strings on LCD") {
@@ -119,8 +119,6 @@ int32_t  GLCD_DrawBitmap (uint32_t x, uint32_t y,
 **Figure 3 *printf()* and *\_\_cycleof\_\_***
 
 ![image-20220117231318232](./documents/pictures/telnet_clean.png) 
-
-
 
 ## License
 
