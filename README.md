@@ -1,2 +1,2 @@
 # lv_port_mps3_an547_cm55
-A LV port for Cortex-M55 running on Arm Official FPGA prototype development board MPS3. It is also possible to run on a free emulator called fixed-virtual-platforms (FVP).
+A LVGL port for Cortex-M55 running on Arm Official FPGA prototype development board MPS3 ([AN547](https://developer.arm.com/tools-and-software/development-boards/fpga-prototyping-boards/download-fpga-images#)). It is also possible to run the project template on a free emulator called fixed-virtual-platforms, [Corstone-300-FVP](https://developer.arm.com/tools-and-software/open-source-software/arm-platforms-software/arm-ecosystem-fvps).
