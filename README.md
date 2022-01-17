@@ -23,6 +23,102 @@ A LVGL port for Cortex-M55 running on an [Arm official FPGA prototype developmen
 - PRAM (Used for Code and RO-Data): 2MByte
 - SRAM: 4MByte
 - DDR4: 1GByte
+- MDK Project with Arm Compiler 6
+
+
+
+## LVGL Porting Exercise 
+
+For people to learn and practice how to port LVGL to a LCD-Ready MDK project using LVGL cmsis-pack in MDK environment, a dedicated branch called "***lvgl_porting_exercise***" has been introduced. It contains a clean project which provides:
+
+- An LCD ready project with low-level LCD APIs
+
+```c
+extern int32_t  GLCD_Initialize          (void);
+extern int32_t  GLCD_Uninitialize        (void);
+extern int32_t  GLCD_SetForegroundColor  (uint32_t color);
+extern int32_t  GLCD_SetBackgroundColor  (uint32_t color);
+extern int32_t  GLCD_ClearScreen         (void);
+extern int32_t  GLCD_SetFont             (GLCD_FONT *font);
+extern int32_t  GLCD_DrawPixel           (uint32_t x, uint32_t y);
+extern int32_t  GLCD_DrawHLine           (uint32_t x, uint32_t y, uint32_t length);
+extern int32_t  GLCD_DrawVLine           (uint32_t x, uint32_t y, uint32_t length);
+extern int32_t  GLCD_DrawRectangle       (uint32_t x, uint32_t y, uint32_t width, uint32_t height);
+extern int32_t  GLCD_DrawChar            (uint32_t x, uint32_t y, int32_t  ch);
+extern int32_t  GLCD_DrawString          (uint32_t x, uint32_t y, const char *str);
+extern int32_t  GLCD_DrawBitmap          (uint32_t x, uint32_t y, 
+                                          uint32_t width, uint32_t height, const uint8_t *bitmap);
+```
+
+
+
+- A simple ***main()*** function
+
+```c
+int main(void)
+{
+    printf("Hello LVGL!!\r\n");
+    
+    __cycleof__("Draw strings on LCD") {
+        __LL_LCD_PRINT_BANNER("Hello LVGL!!");
+    }
+    
+    while(1) {
+    
+    }
+    
+}
+```
+
+
+
+- A simple way to display string on LCD
+
+```c
+extern 
+int32_t GLCD_DrawString(uint32_t x, uint32_t y, const char *str);
+
+#define __LL_LCD_PRINT_BANNER(__STR)                                            \
+        do {                                                                    \
+            GLCD_DrawString(    (GLCD_HEIGHT) / 2 - 8,                          \
+                                (GLCD_WIDTH - sizeof(__STR) * 6) / 2,           \
+                                __STR);                                         \
+        } while(0)
+```
+
+
+
+- **printf()** is retargeted to USART0 (telnet in FVP emulation).
+- A function, ***GLCD_DrawBitmap()***,  for flushing display buffer to LCD, which supports window-mode (partial flush).
+
+```c
+extern 
+int32_t  GLCD_DrawBitmap (uint32_t x, uint32_t y, 
+                          uint32_t width, uint32_t height, 
+                          const uint8_t *bitmap);
+```
+
+- Ready to Compile and Debug in FVP (Emulation) as shown in Figure 2.
+
+
+
+**Figure 2 A Clean Project Template for practicing LVGL Porting using LVGL CMSIS-Pack** 
+
+![image-20220117225044592](./documents/pictures/fvp_clean) 
+
+- An new method, ***\_\_cycleof\_\_()***, for measuring cpu cycles consumed by specified code segment.
+
+```c
+    __cycleof__("Draw strings on LCD") {
+        __LL_LCD_PRINT_BANNER("Hello LVGL!!");
+    }
+```
+
+
+
+**Figure 3 *printf()* and *\_\_cycleof\_\_***
+
+![image-20220117231318232](./documents/pictures/telnet_clean.png) 
 
 
 
