@@ -27,6 +27,61 @@ A LVGL porting for Cortex-M55 running on an [Arm official FPGA prototyping devel
 
 
 
+## How To Use
+
+### How to run the simulation
+
+1. Download the [Corstone-300-FVP](https://developer.arm.com/tools-and-software/open-source-software/arm-platforms-software/arm-ecosystem-fvps) and install it.
+2. Open project in MDK
+3. Select the '**Cortex-M55_FVP**'
+
+![](./documents/pictures/configuration_selection) 
+
+4. Open 'Options for Target' window and select the 'Debug' panel
+
+![](./documents/pictures/debug_panel)
+
+5.  Press 'Settings' button on the right corner
+
+![](./documents/pictures/Model_Settings)
+
+6.  Click the '...' button on the top-right corner, browse to the folder where Corstone-300-FVP is installed and and select the executable file, i.e. FVP_Corstone_SSE-300_EThos-U55.exe. 
+
+![](./documents/pictures/FVP)
+
+ Usually the Corstone-300-FVP is located in the following path:
+
+```
+C:\Program Files\ARM\FVP_Corstone_SSE-300\models\Win64_VC2017\FVP_Corstone_SSE-300_Ethos-U55.exe
+```
+
+7. Click the '...' button next to the 'Target' textbox and select the cpu0 in the popup dialog. Click OK to confirm.
+
+![](./documents/pictures/select_cpu0)
+
+8.  Click the OK button to close the 'Models Armv8-M Target Driver Setup' window.
+9. Compile and Debug. You should be able to see the LVGL benchmark running on the FVP window as shown below:
+
+![](./documents/pictures/fvp_demo) 
+
+### NOTE: 
+
+1. FVP can **ONLY** be used to verify the correctness of firmware functionality
+
+2. **NO** performance data generated from FVP is trustworthy. FVP is simply **NOT** designed for performance evaluation. 
+
+   For example, the -O0 optimization might looks like running as fast as -Ofast and -Ofast+LTO (Link-Time-Optimization) runs very slow.  In fact, in the real hardware, -Ofast+LTO > -Ofast >> -O0. 
+
+
+
+### How to Run on MPS3
+
+1. Open project in MDK
+2. Select the '**Cortex-M55_MPS3**' configuration
+3. Compile and Debug
+
+
+
 ## LVGL Porting Exercise 
 
 For people to learn and practice how to port LVGL to a LCD-Ready MDK project using LVGL cmsis-pack, a dedicated branch called "***lvgl_porting_exercise***" has been introduced. It contains a clean project which provides:
