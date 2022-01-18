@@ -22,7 +22,7 @@
 #define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
           #define RTE_Compiler_IO_STDOUT_User     /* Compiler I/O: STDOUT User */
 /* LVGL.LVGL::LVGL:lvgl:Benchmark:8.1.0 */
-/*! \brief enable ffmpeg support */
+/*! \brief enable demo:bencharmk */
 #define LV_USE_DEMO_BENCHMARK         1
 /* LVGL.LVGL::LVGL:lvgl:Essential:8.1.0 */
 /*! \brief Enable LVGL */

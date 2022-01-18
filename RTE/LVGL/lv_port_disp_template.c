@@ -76,7 +76,7 @@ void lv_port_disp_init(void)
 
     /* Single Buffer */
     static lv_disp_draw_buf_t draw_buf_dsc_1;
-    static lv_color_t buf_1[GLCD_WIDTH * GLCD_HEIGHT / 10];                     
+    static lv_color_t buf_1[GLCD_WIDTH * GLCD_HEIGHT];                     
     lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, dimof(buf_1));          /*Initialize the display buffer*/
 
 
@@ -92,6 +92,11 @@ void lv_port_disp_init(void)
     /*Set the resolution of the display*/
     disp_drv.hor_res = GLCD_WIDTH;
     disp_drv.ver_res = GLCD_HEIGHT;
+
+#if LV_USE_DEMO_WIDGETS
+    disp_drv.physical_hor_res = 480;
+    disp_drv.physical_ver_res = 320;
+#endif
 
     /*Used to copy the buffer's content to the display*/
     disp_drv.flush_cb = disp_flush;
