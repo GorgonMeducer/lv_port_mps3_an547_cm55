@@ -332,7 +332,7 @@
             <v6LangP>3</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
-            <v6Lto>1</v6Lto>
+            <v6Lto>0</v6Lto>
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
@@ -628,20 +628,26 @@
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>
       </component>
+      <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Benchmark" Cvendor="LVGL" Cversion="8.1.0" condition="LVGL-Essential">
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
+        <targetInfos>
+          <targetInfo name="Cortex-M55_FVP"/>
+        </targetInfos>
+      </component>
       <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Essential" Cvendor="LVGL" Cversion="8.1.0">
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
         <targetInfos>
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>
       </component>
       <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Extra Themes" Cvendor="LVGL" Cversion="8.1.0" condition="LVGL-Essential">
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
         <targetInfos>
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>
       </component>
       <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.1.0" condition="LVGL-Essential">
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
         <targetInfos>
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>
@@ -723,7 +729,7 @@
       <file attr="config" category="sourceC" name="lv_cmsis_pack.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_cmsis_pack.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Essential" Cvendor="LVGL" Cversion="8.1.0"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
         <targetInfos>
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>
@@ -731,7 +737,7 @@
       <file attr="config" category="preIncludeGlobal" name="lv_conf_cmsis.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_conf_cmsis.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Essential" Cvendor="LVGL" Cversion="8.1.0"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
         <targetInfos>
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>
@@ -739,7 +745,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_disp_template.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_disp_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.1.0" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
         <targetInfos>
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>
@@ -747,7 +753,7 @@
       <file attr="config" category="header" name="examples\porting\lv_port_disp_template.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_disp_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.1.0" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
         <targetInfos>
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>
@@ -755,7 +761,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_fs_template.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_fs_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.1.0" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
         <targetInfos>
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>
@@ -763,7 +769,7 @@
       <file attr="config" category="header" name="examples\porting\lv_port_fs_template.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_fs_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.1.0" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
         <targetInfos>
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>
@@ -771,7 +777,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_indev_template.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_indev_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.1.0" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
         <targetInfos>
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>
@@ -779,7 +785,7 @@
       <file attr="config" category="header" name="examples\porting\lv_port_indev_template.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_indev_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.1.0" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/cmsis-pack/" vendor="LVGL" version="0.8.3"/>
         <targetInfos>
           <targetInfo name="Cortex-M55_FVP"/>
         </targetInfos>

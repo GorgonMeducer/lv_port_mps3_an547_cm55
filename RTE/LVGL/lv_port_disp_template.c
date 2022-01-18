@@ -11,6 +11,7 @@
 #include "lv_port_disp_template.h"
 #include "lvgl.h"
 #include "Board_GLCD.h"
+#include "perf_counter.h"
 
 /*********************
  *      DEFINES
@@ -75,8 +76,8 @@ void lv_port_disp_init(void)
 
     /* Single Buffer */
     static lv_disp_draw_buf_t draw_buf_dsc_1;
-    static lv_color_t buf_1[GLCD_WIDTH * 10];                                   /*A buffer for 10 rows*/
-    lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, GLCD_WIDTH * 10);       /*Initialize the display buffer*/
+    static lv_color_t buf_1[GLCD_WIDTH * GLCD_HEIGHT / 10];                     
+    lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, dimof(buf_1));          /*Initialize the display buffer*/
 
 
     /*-----------------------------------

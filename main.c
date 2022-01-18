@@ -27,6 +27,9 @@
 
 #include "lv_port_disp_template.h"
 
+#ifdef LV_USE_DEMO_BENCHMARK
+#   include "lv_demo_benchmark.h"
+#endif
 
 /*============================ MACROS ========================================*/
 /*============================ MACROFIED FUNCTIONS ===========================*/
@@ -69,6 +72,10 @@ int main(void)
     
     lv_init();
     lv_port_disp_init();
+    
+#ifdef LV_USE_DEMO_BENCHMARK
+    lv_demo_benchmark();
+#endif
     
     while(1) {
         
