@@ -17,6 +17,7 @@
 #define LV_CONF_H
 
 #include <stdint.h>
+#include "app_cfg.h"
 #include "RTE_Components.h"
 
 /*====================
@@ -85,10 +86,12 @@
 
 /*Use a custom tick source that tells the elapsed time in milliseconds.
  *It removes the need to manually update the tick with `lv_tick_inc()`)*/
-#define LV_TICK_CUSTOM 0
+#define LV_TICK_CUSTOM 1
 #if LV_TICK_CUSTOM
-    #define LV_TICK_CUSTOM_INCLUDE "Arduino.h"         /*Header for the system time function*/
-    #define LV_TICK_CUSTOM_SYS_TIME_EXPR (millis())    /*Expression evaluating to current system time in ms*/
+
+    extern uint32_t SystemCoreClock;
+    #define LV_TICK_CUSTOM_INCLUDE "perf_counter.h"         /*Header for the system time function*/
+    #define LV_TICK_CUSTOM_SYS_TIME_EXPR                (get_system_ticks() / (SystemCoreClock / 1000ul))
 #endif   /*LV_TICK_CUSTOM*/
 
 /*Default Dot Per Inch. Used to initialize default sizes such as widgets sized, style paddings.

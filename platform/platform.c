@@ -27,6 +27,7 @@
 #include <stdbool.h>
 #include <stdarg.h>
 
+#include "cmsis.h"
 
 #if defined(__clang__)
 #   pragma clang diagnostic push
@@ -51,14 +52,13 @@
 /*============================ PROTOTYPES ====================================*/
 /*============================ IMPLEMENTATION ================================*/
 
-void SysTick_Handler(void)
-{
-
-}
 
 __WEAK 
 bool device_specific_init(void)
 {
+    //! every 5ms
+    SysTick_Config(SystemCoreClock / 200);
+    
     return false;
 }
 

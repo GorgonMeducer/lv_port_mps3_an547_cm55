@@ -25,6 +25,8 @@
 #include <stdbool.h>
 #include <stdarg.h>
 
+#include "lv_port_disp_template.h"
+
 
 /*============================ MACROS ========================================*/
 /*============================ MACROFIED FUNCTIONS ===========================*/
@@ -34,19 +36,42 @@
 /*============================ PROTOTYPES ====================================*/
 /*============================ IMPLEMENTATION ================================*/
 
+void SysTick_Handler(void)
+{
+    //! every 5ms 
+    
+    lv_timer_handler();
+    
+    /*! \note please do not put following code here
+     *!
+     *!  lv_tick_inc(5);
+     *!  
+     *!     Use a custom tick source that tells the elapsed time in milliseconds.
+     *!     It removes the need to manually update the tick with `lv_tick_inc()`)
+     *!     #define LV_TICK_CUSTOM 1
+     *!     #if LV_TICK_CUSTOM
+     *!         extern uint32_t SystemCoreClock;
+     *!         #define LV_TICK_CUSTOM_INCLUDE "perf_counter.h"  
+     *!         #define LV_TICK_CUSTOM_SYS_TIME_EXPR                            \
+     *!                        (get_system_ticks() / (SystemCoreClock / 1000ul))
+     *!     #endif
+     */
+}
+
 
 int main(void)
 {
-    
-    
     printf("Hello LVGL!!\r\n");
     
     __cycleof__("Draw strings on LCD") {
         __LL_LCD_PRINT_BANNER("Hello LVGL!!");
     }
     
-    while(1) {
+    lv_init();
+    lv_port_disp_init();
     
+    while(1) {
+        
     }
     
 }
