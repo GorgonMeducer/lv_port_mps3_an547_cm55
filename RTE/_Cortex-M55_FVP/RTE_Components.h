@@ -21,10 +21,10 @@
 /* Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0 */
 #define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
           #define RTE_Compiler_IO_STDOUT_User     /* Compiler I/O: STDOUT User */
-/* LVGL.LVGL::LVGL:lvgl:Essential:8.1.0 */
+/* LVGL.LVGL::LVGL:lvgl:Essential:8.1.1 */
 /*! \brief Enable LVGL */
-#define RTE_GRAPICS_LVGL
-/* LVGL.LVGL::LVGL:lvgl:Extra Themes:8.1.0 */
+#define RTE_GRAPHICS_LVGL
+/* LVGL.LVGL::LVGL:lvgl:Extra Themes:8.1.1 */
 /*! \brief use extra themes, widgets and layouts */
 #define RTE_GRAPHICS_LVGL_USE_EXTRA_THEMES
 
